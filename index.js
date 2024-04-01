@@ -4,6 +4,7 @@ const app = express()
 
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(express.static('dist'))
 
 
 let persons = [
@@ -108,7 +109,7 @@ app.delete('/api/persons/:id', (request, response) => {
 
 
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
     console.log(morgan('tiny'))
