@@ -33,9 +33,6 @@ let persons = [
 const generateId = () => {
     return Math.random() * (9999999999999999999 - 1) + 1
 }
-app.get('/', (request, response) => {
-    response.send('<h1>Hello World!</h1>')
-})
 
 const countPeople = () => {
     return persons.length
